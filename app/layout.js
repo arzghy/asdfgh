@@ -1,30 +1,27 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClientWrapper } from './client-wrapper'
+import { ClientWrapper } from "./client-wrapper";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const inter = Inter({
+   variable: "--font-inter",
+   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "front-end",
-  description: "front-end itase fest",
+   title: {
+      default: "Sakuin | Solusi Cerdas Keuangan UMKM",
+      template: "%s | Sakuin",
+   },
+   description: "Kelola cashflow bisnis UMKM Anda lebih mudah dengan Sakuin. Catat transaksi, analisis arus kas, dan dapatkan rekomendasi AI untuk pertumbuhan usaha.",
+   keywords: ["Sakuin", "UMKM", "keuangan", "cashflow", "aplikasi UMKM", "dashboard keuangan", "AI bisnis", "manajemen keuangan"],
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ClientWrapper>
-          {children}
-        </ClientWrapper>
-      </body>
-    </html>
-  );
+   return (
+      <html lang="id">
+         <body className={`${inter.variable}`}>
+            <ClientWrapper>{children}</ClientWrapper>
+         </body>
+      </html>
+   );
 }
