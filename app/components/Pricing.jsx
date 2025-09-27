@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const Pricing = () => {
    return (
-      <section id="pricing" className="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
+      <section id="pricing" className="relative z-20 overflow-hidden pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]">
          <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-4">
                <div className="w-full px-4">
@@ -27,9 +29,9 @@ const Pricing = () => {
                            <p className="text-base text-body-color dark:text-dark-6">❌ Tidak ada prediksi AI</p>
                         </div>
                      </div>
-                     <a href="javascript:void(0)" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
+                     <Link href="/dashboard" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
                         Mulai sekarang
-                     </a>
+                     </Link>
                   </div>
                </div>
                <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -38,7 +40,7 @@ const Pricing = () => {
                      <span className="block mb-5 text-xl font-medium text-dark dark:text-white">Basic</span>
                      <h2 className="mb-11 text-4xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
                         <span className="text-xl font-medium">Rp </span>
-                        <span className="-ml-1 -tracking-[2px]">59.000</span>
+                        <span className="-ml-1 -tracking-[2px]">39.000</span>
                         <span className="text-base font-normal text-body-color dark:text-dark-6">/bulan</span>
                         <div className="text-base font-normal text-body-color dark:text-dark-6">Cocok untuk UMKM berkembang.</div>
                      </h2>
@@ -50,9 +52,9 @@ const Pricing = () => {
                            <p className="text-base text-body-color dark:text-dark-6">✅ Prediksi cashflow 1 bulan</p>
                         </div>
                      </div>
-                     <a href="javascript:void(0)" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
+                     <Link href="/dashboard" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
                         Berlangganan sekarang
-                     </a>
+                     </Link>
                   </div>
                </div>
                <div className="w-full px-4 md:w-1/2 lg:w-1/3">
@@ -73,9 +75,9 @@ const Pricing = () => {
                            <p className="text-base text-body-color dark:text-dark-6">✅ Laporan keuangan otomatis PDF</p>
                         </div>
                      </div>
-                     <a href="javascript:void(0)" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
+                     <Link href="/dashboard" className="inline-block py-3 text-base font-medium text-center text-white transition rounded-md bg-primary px-7 hover:bg-blue-dark">
                         Berlangganan sekarang
-                     </a>
+                     </Link>
                   </div>
                </div>
             </div>

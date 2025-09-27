@@ -1,12 +1,12 @@
 const Features = () => {
    return (
-      <section id="features" className="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+      <section id="features" className="bg-gray-1 pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
          <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-4">
                <div className="w-full px-4">
                   <div className="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
                      <span className="block mb-2 text-lg font-semibold text-primary">Features</span>
-                     <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">Fitur Utama Sakuin</h2>
+                     <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">Fitur Utama SAKUIN</h2>
                      <p className="text-base text-body-color dark:text-dark-6">Satu aplikasi untuk mencatat, menganalisis, dan mengembangkan bisnis UMKM Anda.</p>
                   </div>
                </div>
@@ -26,7 +26,7 @@ const Features = () => {
                         </svg>
                      </div>
                      <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">Pencatatan Uang Otomatis</h4>
-                     <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">Catat pemasukan & pengeluaran harian dengan mudah. Bisa upload struk, otomatis terbaca oleh AI.</p>
+                     <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">Catat pemasukan & pengeluaran harian tanpa ribet. Cukup upload struk, semua transaksi langsung terbaca oleh AI dan tersimpan aman.</p>
                   </div>
                </div>
                <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -101,7 +101,7 @@ const Features = () => {
                         </svg>
                      </div>
                      <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">Prediksi Arus Kas</h4>
-                     <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">AI memprediksi cashflow Anda 1–3 bulan ke depan, lengkap dengan peringatan risiko keuangan.</p>
+                     <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">AI memprediksi cashflow Anda 1 sampai 3 bulan ke depan, lengkap dengan peringatan risiko keuangan.</p>
                   </div>
                </div>
             </div>

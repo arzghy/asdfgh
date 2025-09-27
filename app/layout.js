@@ -9,11 +9,11 @@ const inter = Inter({
 
 export const metadata = {
    title: {
-      default: "Sakuin | Solusi Cerdas Keuangan UMKM",
-      template: "%s | Sakuin",
+      default: "SAKUIN | Solusi Cerdas Keuangan UMKM",
+      template: "%s | SAKUIN",
    },
-   description: "Kelola cashflow bisnis UMKM Anda lebih mudah dengan Sakuin. Catat transaksi, analisis arus kas, dan dapatkan rekomendasi AI untuk pertumbuhan usaha.",
-   keywords: ["Sakuin", "UMKM", "keuangan", "cashflow", "aplikasi UMKM", "dashboard keuangan", "AI bisnis", "manajemen keuangan"],
+   description: "Kelola cashflow bisnis UMKM Anda lebih mudah dengan SAKUIN. Catat transaksi, analisis arus kas, dan dapatkan rekomendasi AI untuk pertumbuhan usaha.",
+   keywords: ["SAKUIN", "UMKM", "keuangan", "cashflow", "aplikasi UMKM", "dashboard keuangan", "AI bisnis", "manajemen keuangan"],
 };
 
 export default function RootLayout({ children }) {

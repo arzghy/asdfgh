@@ -90,6 +90,7 @@
    }
    body {
       line-height: inherit;
+      scroll-behavior: smooth;
    }
    hr {
       height: 0;

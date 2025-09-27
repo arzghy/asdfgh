@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Cta = () => {
    return (
       <section className="relative z-10 overflow-hidden bg-primary py-20 lg:py-[115px]">
@@ -7,12 +9,12 @@ const Cta = () => {
                   <div className="w-full px-4">
                      <div className="mx-auto max-w-[570px] text-center">
                         <h2 className="mb-2.5 text-3xl font-bold text-white md:text-[38px] md:leading-[1.44]">
-                           <span>Tunggu Apalagi? </span>
+                           <span>Tunggu Apa Lagi? </span>
                         </h2>
-                        <p className="mx-auto mb-6 max-w-[515px] text-base leading-[1.5] text-white">Mulai kelola keuangan bisnis Anda dengan lebih cerdas. Gratis untuk dicoba, tanpa kartu kredit!</p>
-                        <a href="/" className="inline-block rounded-md border border-transparent bg-white/20 px-7 py-3 text-base font-medium text-white transition">
-                           Mulai Pakai Sakuin
-                        </a>
+                        <p className="mx-auto mb-6 max-w-[515px] text-base leading-[1.5] text-white">Kelola arus kas bisnis secara otomatis, cepat, dan aman. Coba akses Sakuin dengan gratis sekarang juga!</p>
+                        <Link href="/dashboard" className="inline-block rounded-md border border-transparent bg-white/20 px-7 py-3 text-base font-medium text-white transition">
+                           Mulai Pakai SAKUIN
+                        </Link>
                      </div>
                   </div>
                </div>

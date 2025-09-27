@@ -1,7 +1,5 @@
 import About from "./components/About";
 import Blog from "./components/Blog";
-import Brands from "./components/Brands";
-import Contact from "./components/Contact";
 import Cta from "./components/Cta";
 import Faq from "./components/Faq";
 import Features from "./components/Features";
@@ -16,15 +14,13 @@ export default function Home() {
       <>
          <Navbar />
          <Hero />
-         <Features />
          <About />
-         <Cta />
+         <Features />
          <Pricing />
          <Faq />
+         <Cta />
          <Team />
          <Blog />
-         {/* <Contact /> */}
-         {/* <Brands /> */}
          <Footer />
       </>
    );
