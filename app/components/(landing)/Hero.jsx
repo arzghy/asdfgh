@@ -14,12 +14,12 @@ const Hero = () => {
                      <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">Kelola keuangan bisnis lebih mudah dengan pencatatan otomatis, analitik cerdas, dan rekomendasi berbasis AI.</p>
                      <ul className="flex flex-wrap items-center justify-center gap-5">
                         <li>
-                           <Link
+                           <a
                               href="/dashboard"
                               className="inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
                            >
                               Coba Sekarang
-                           </Link>
+                           </a>
                         </li>
                         <li>
                            <Link
