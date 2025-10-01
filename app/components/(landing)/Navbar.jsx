@@ -50,9 +50,8 @@ const Navbar = () => {
                         <ul className="blcok lg:flex 2xl:ml-20">
                            <li className="relative group">
                               <Link
-                                 href="#home"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 ${
+                                 href="/#home"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -61,9 +60,8 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="#problem"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
+                                 href="/#problem"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -72,9 +70,8 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="#features"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
+                                 href="/#features"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -83,9 +80,8 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="#pricing"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
+                                 href="/#pricing"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -94,9 +90,8 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="#faq"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
+                                 href="/#faq"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -105,9 +100,8 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="#team"
-                                 onClick={closeAllMenus}
-                                 className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
+                                 href="/#team"
+                                 className={`flex py-2 mx-8 text-base font-medium text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"
                                  }`}
                               >
@@ -116,7 +110,7 @@ const Navbar = () => {
                            </li>
                            <li className="relative group">
                               <Link
-                                 href="/blog"
+                                 href="/blogs"
                                  onClick={closeAllMenus}
                                  className={`flex py-2 mx-8 text-base font-medium ud-menu-scroll text-dark group-hover:text-primary lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:group-hover:opacity-70 xl:ml-10 ${
                                     isSticky ? "text-dark hover:text-primary" : "lg:text-white lg:group-hover:text-white text-dark hover:primary"

@@ -1,7 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import BlogCard from "./BlogCard";
 
-function BlogList() {
+export default function BlogList({ initialBlogs }) {
+   const [blogs] = useState(initialBlogs);
+   const blogData = blogs?.data || [];
+
+   if (blogData.length === 0) {
+      return (
+         <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 dark:bg-dark">
+            <div className="container mx-auto px-4">
+               <div className="flex items-center justify-center min-h-[400px]">
+                  <p className="text-body-color dark:text-dark-6">Belum ada artikel tersedia</p>
+               </div>
+            </div>
+         </section>
+      );
+   }
+
    return (
       <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 dark:bg-dark">
          <div className="container mx-auto px-4">
@@ -89,5 +107,3 @@ function BlogList() {
       </section>
    );
 }
-
-export default BlogList;
