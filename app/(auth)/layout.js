@@ -21,18 +21,14 @@ export default function AuthLayout({ children }) {
         <div className="flex items-center justify-center z-1">
           <div className="flex flex-col items-center max-w-xs text-center">
             <Image
-                src="/images/logo/auth-logo.svg"
+                src="/images/logo/logo-white.png"
                 alt="Logo"
                 width={200}
                 height={50}
               />
-            <p className="text-gray-400 dark:text-white/60">
-              Solusi Cerdas Keuangan UMKM
-            </p>
           </div>
         </div>
       </div>
-      
     </div>
   );
 }
