@@ -9,7 +9,7 @@ export default function SignInPage() {
   return (
     <>
       {/* Tombol Kembali ke Home */}
-      <Link href="/" className="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 mb-8">
+      <Link href="/" className="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 mb-8 -translate-y-8">
         <svg
           className="stroke-current mr-2"
           xmlns="http://www.w3.org/2000/svg"
