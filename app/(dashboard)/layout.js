@@ -1,40 +1,43 @@
 "use client";
-
 import "./dashboard.css";
-import { useState, useEffect, createContext } from "react";
-
-import Sidebar from "../components/dashboard/Sidebar";
-import Header from "../components/dashboard/Header";
-import Preloader from "../components/dashboard/Preloader";
-import Overlay from "../components/dashboard/Overlay";
-
-export const SidebarContext = createContext(null);
+import React, { useState } from "react";
+import Preloader from "../components/(dashboard)/Preloader";
+import Sidebar from "../components/(dashboard)/Sidebar";
+import Header from "../components/(dashboard)/Header";
+import Overlay from "../components/(dashboard)/Overlay";
 
 export default function DashboardLayout({ children }) {
-   const [sidebarToggle, setSidebarToggle] = useState(false);
-   const [loading, setLoading] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const [sidebarToggle, setSidebarToggle] = useState(false);
 
-   useEffect(() => {
-      const timer = setTimeout(() => setLoading(false), 500);
-      return () => clearTimeout(timer);
-   }, []);
+  // Logika untuk menyimpan state darkMode bisa ditambahkan di sini dengan localStorage
 
-   if (loading) {
-      return <Preloader />;
-   }
-
-   return (
-      <SidebarContext.Provider value={{ sidebarToggle, setSidebarToggle }}>
-         <div className="flex h-screen overflow-hidden">
-            <Sidebar />
-            <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-               <Overlay />
-               <Header />
-               <main>
-                  <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">{children}</div>
-               </main>
+  return (
+    <div className={darkMode ? "dark" : ""}>
+      <Preloader />
+      <div className="flex h-screen overflow-hidden">
+        <Sidebar
+          sidebarToggle={sidebarToggle}
+          setSidebarToggle={setSidebarToggle}
+        />
+        <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
+          <Overlay
+            sidebarToggle={sidebarToggle}
+            setSidebarToggle={setSidebarToggle}
+          />
+          <Header
+            sidebarToggle={sidebarToggle}
+            setSidebarToggle={setSidebarToggle}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+          />
+          <main>
+            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+              {children}
             </div>
-         </div>
-      </SidebarContext.Provider>
-   );
+          </main>
+        </div>
+      </div>
+    </div>
+  );
 }
