@@ -267,3 +267,65 @@ body {
 .jvm-marker.jvm-element {
   @apply !stroke-gray-200 dark:!stroke-gray-800;
 }
+/* Tambahkan ini ke file app/(dashboard)/dashboard.css yang sudah ada */
+
+/* Tambahan variabel warna untuk success dan error */
+@theme {
+  --color-success-50: #ecfdf3;
+  --color-success-500: #12b76a;
+  --color-success-600: #039855;
+  
+  --color-error-50: #fef3f2;
+  --color-error-500: #f04438;
+  --color-error-600: #d92d20;
+  
+  /* Tambahan text sizes */
+  --text-title-sm: 24px;
+  --text-title-sm--line-height: 32px;
+}
+
+/* Custom scrollbar untuk overflow areas */
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    @apply h-1.5 w-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-full;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-200;
+  }
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #344054;
+}
+
+/* Shadow utilities */
+.shadow-default {
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+}
+
+.shadow-xs {
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+/* Z-index utilities */
+.z-9 {
+  z-index: 9;
+}
+
+.z-99999 {
+  z-index: 99999;
+}
+
+.z-9999 {
+  z-index: 9999;
+}
+
+.z-999 {
+  z-index: 999;
+}

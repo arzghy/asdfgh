@@ -1,7 +1,6 @@
 "use client";
 import "./dashboard.css";
 import React, { useState } from "react";
-import Preloader from "../components/(dashboard)/Preloader";
 import Sidebar from "../components/(dashboard)/Sidebar";
 import Header from "../components/(dashboard)/Header";
 import Overlay from "../components/(dashboard)/Overlay";
@@ -10,11 +9,8 @@ export default function DashboardLayout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   const [sidebarToggle, setSidebarToggle] = useState(false);
 
-  // Logika untuk menyimpan state darkMode bisa ditambahkan di sini dengan localStorage
-
   return (
     <div className={darkMode ? "dark" : ""}>
-      <Preloader />
       <div className="flex h-screen overflow-hidden">
         <Sidebar
           sidebarToggle={sidebarToggle}
