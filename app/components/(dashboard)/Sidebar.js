@@ -1,12 +1,28 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+"use client"
+import Link from "next/link"
+import Image from "next/image"
+import { useState } from "react"
+import { usePathname } from "next/navigation"
 
 export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
-  const [selectedMenu, setSelectedMenu] = useState("Dashboard");
-  const pathname = usePathname();
+  const [selectedMenu, setSelectedMenu] = useState("Dashboard")
+  const [openDropdowns, setOpenDropdowns] = useState({
+    Dashboard: false,
+    Forms: false,
+    Tables: false,
+    Pages: false,
+    Charts: false,
+    UIElements: false,
+    Authentication: false,
+  })
+  const pathname = usePathname()
+
+  const toggleDropdown = (menuId) => {
+    setOpenDropdowns((prev) => ({
+      ...prev,
+      [menuId]: !prev[menuId],
+    }))
+  }
 
   const menuItems = [
     {
@@ -16,11 +32,11 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
         <path
           fillRule="evenodd"
           clipRule="evenodd"
-          d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V8.99998C3.25 10.2426 4.25736 11.25 5.5 11.25H9C10.2426 11.25 11.25 10.2426 11.25 8.99998V5.5C11.25 4.25736 10.2426 3.25 9 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H9C9.41421 4.75 9.75 5.08579 9.75 5.5V8.99998C9.75 9.41419 9.41421 9.74998 9 9.74998H5.5C5.08579 9.74998 4.75 9.41419 4.75 8.99998V5.5ZM5.5 12.75C4.25736 12.75 3.25 13.7574 3.25 15V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H9C10.2426 20.75 11.25 19.7427 11.25 18.5V15C11.25 13.7574 10.2426 12.75 9 12.75H5.5ZM4.75 15C4.75 14.5858 5.08579 14.25 5.5 14.25H9C9.41421 14.25 9.75 14.5858 9.75 15V18.5C9.75 18.9142 9.41421 19.25 9 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V15ZM12.75 5.5C12.75 4.25736 13.7574 3.25 15 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V8.99998C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 8.99998V5.5ZM15 4.75C14.5858 4.75 14.25 5.08579 14.25 5.5V8.99998C14.25 9.41419 14.5858 9.74998 15 9.74998H18.5C18.9142 9.74998 19.25 9.41419 19.25 8.99998V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H15ZM15 12.75C13.7574 12.75 12.75 13.7574 12.75 15V18.5C12.75 19.7426 13.7574 20.75 15 20.75H18.5C19.7426 20.75 20.75 19.7427 20.75 18.5V15C20.75 13.7574 19.7426 12.75 18.5 12.75H15ZM14.25 15C14.25 14.5858 14.5858 14.25 15 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15C14.5858 19.25 14.25 18.9142 14.25 18.5V15Z"
+          d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V8.99998C3.25 10.2426 4.25736 11.25 5.5 11.25H9C10.2426 11.25 11.25 10.2426 11.25 8.99998V5.5C11.25 4.25736 10.2426 3.25 9 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H9C9.41421 4.75 9.75 5.08579 9.75 5.5V8.99998C9.75 9.41419 9.41421 9.74998 9 9.74998H5.5C5.08579 9.74998 4.75 9.41419 4.75 8.99998V5.5ZM5.5 12.75C4.25736 12.75 3.25 13.7574 3.25 15V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H9C10.2426 20.75 11.25 19.7427 11.25 18.5V15C11.25 13.7574 10.2426 12.75 9 12.75H5.5ZM4.75 15C4.75 14.5858 5.08579 14.25 5.5 14.25H9C9.41421 14.25 9.75 14.5858 9.75 15V18.5C9.75 18.9142 9.41421 19.25 9 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V15ZM12.75 5.5C12.75 4.25736 13.7574 3.25 15 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V8.99998C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 8.99998V5.5ZM15 4.75C14.5858 4.75 14.25 5.08579 14.25 5.5V8.99998C14.25 9.41419 14.5858 9.74998 14.25 9.74998H18.5C18.9142 9.74998 19.25 9.41419 19.25 8.99998V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H15ZM15 12.75C13.7574 12.75 12.75 13.7574 12.75 15V18.5C12.75 19.7426 13.7574 20.75 15 20.75H18.5C19.7426 20.75 20.75 19.7427 20.75 18.5V15C20.75 13.7574 19.7426 12.75 18.5 12.75H15ZM14.25 15C14.25 14.5858 14.5858 14.25 15 14.25H18.5C18.9142 14.25 19.25 14.5858 19.25 15V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15C14.5858 19.25 14.25 18.9142 14.25 18.5V15Z"
         />
       ),
       href: "/dashboard",
-      hasDropdown: false,
+      hasDropdown: true,
     },
     {
       id: "Calendar",
@@ -48,9 +64,97 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
       href: "/profile",
       hasDropdown: false,
     },
-  ];
+    {
+      id: "Forms",
+      label: "Forms",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M5.5 3.25C4.25736 3.25 3.25 4.25736 3.25 5.5V18.5C3.25 19.7426 4.25736 20.75 5.5 20.75H18.5C19.7426 20.75 20.75 19.7426 20.75 18.5V5.5C20.75 4.25736 19.7426 3.25 18.5 3.25H5.5ZM4.75 5.5C4.75 5.08579 5.08579 4.75 5.5 4.75H18.5C18.9142 4.75 19.25 5.08579 19.25 5.5V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5V5.5ZM7.25 8C7.25 7.58579 7.58579 7.25 8 7.25H16C16.4142 7.25 16.75 7.58579 16.75 8C16.75 8.41421 16.4142 8.75 16 8.75H8C7.58579 8.75 7.25 8.41421 7.25 8ZM7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12ZM7.25 16C7.25 15.5858 7.58579 15.25 8 15.25H12C12.4142 15.25 12.75 15.5858 12.75 16C12.75 16.4142 12.4142 16.75 12 16.75H8C7.58579 16.75 7.25 16.4142 7.25 16Z"
+        />
+      ),
+      href: "/forms",
+      hasDropdown: true,
+    },
+    {
+      id: "Tables",
+      label: "Tables",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M3.25 5.5C3.25 4.25736 4.25736 3.25 5.5 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V18.5C20.75 19.7426 19.7426 20.75 18.5 20.75H5.5C4.25736 20.75 3.25 19.7426 3.25 18.5V5.5ZM18.5 4.75H5.5C5.08579 4.75 4.75 5.08579 4.75 5.5V8.25H19.25V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75ZM19.25 9.75H4.75V12.25H19.25V9.75ZM19.25 13.75H4.75V18.5C4.75 18.9142 5.08579 19.25 5.5 19.25H18.5C18.9142 19.25 19.25 18.9142 19.25 18.5V13.75Z"
+        />
+      ),
+      href: "/tables",
+      hasDropdown: true,
+    },
+    {
+      id: "Pages",
+      label: "Pages",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M6.5 3.25C5.25736 3.25 4.25 4.25736 4.25 5.5V18.5C4.25 19.7426 5.25736 20.75 6.5 20.75H17.5C18.7426 20.75 19.75 19.7426 19.75 18.5V8.5C19.75 8.36739 19.6973 8.24021 19.6036 8.14645L14.8536 3.39645C14.7598 3.30268 14.6326 3.25 14.5 3.25H6.5ZM5.75 5.5C5.75 5.08579 6.08579 4.75 6.5 4.75H13.75V8.5C13.75 9.19036 14.3096 9.75 15 9.75H18.25V18.5C18.25 18.9142 17.9142 19.25 17.5 19.25H6.5C6.08579 19.25 5.75 18.9142 5.75 18.5V5.5ZM15.25 5.81066L17.1893 7.75H15.25V5.81066Z"
+        />
+      ),
+      href: "/pages",
+      hasDropdown: true,
+    },
+  ]
 
-  const isActive = (href) => pathname === href;
+  const othersMenuItems = [
+    {
+      id: "Charts",
+      label: "Charts",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 3.25C7.16751 3.25 3.25 7.16751 3.25 12C3.25 16.8325 7.16751 20.75 12 20.75C16.8325 20.75 20.75 16.8325 20.75 12C20.75 7.16751 16.8325 3.25 12 3.25ZM4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C13.8638 4.75 15.5615 5.48915 16.8107 6.68934L6.68934 16.8107C5.48915 15.5615 4.75 13.8638 4.75 12ZM8.31066 18.4321C9.56049 19.2607 11.0362 19.75 12.625 19.75C16.6291 19.75 19.875 16.5041 19.875 12.5C19.875 10.9112 19.3857 9.43551 18.5571 8.18568L8.31066 18.4321Z"
+        />
+      ),
+      href: "/charts",
+      hasDropdown: true,
+    },
+    {
+      id: "UIElements",
+      label: "UI Elements",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M3.25 6.5C3.25 5.25736 4.25736 4.25 5.5 4.25H9C10.2426 4.25 11.25 5.25736 11.25 6.5V9C11.25 10.2426 10.2426 11.25 9 11.25H5.5C4.25736 11.25 3.25 10.2426 3.25 9V6.5ZM5.5 5.75C5.08579 5.75 4.75 6.08579 4.75 6.5V9C4.75 9.41421 5.08579 9.75 5.5 9.75H9C9.41421 9.75 9.75 9.41421 9.75 9V6.5C9.75 6.08579 9.41421 5.75 9 5.75H5.5ZM12.75 6.5C12.75 5.25736 13.7574 4.25 15 4.25H18.5C19.7426 4.25 20.75 5.25736 20.75 6.5V9C20.75 10.2426 19.7426 11.25 18.5 11.25H15C13.7574 11.25 12.75 10.2426 12.75 9V6.5ZM15 5.75C14.5858 5.75 14.25 6.08579 14.25 6.5V9C14.25 9.41421 14.5858 9.75 15 9.75H18.5C18.9142 9.75 19.25 9.41421 19.25 9V6.5C19.25 6.08579 18.9142 5.75 18.5 5.75H15ZM3.25 15C3.25 13.7574 4.25736 12.75 5.5 12.75H9C10.2426 12.75 11.25 13.7574 11.25 15V18.5C11.25 19.7426 10.2426 20.75 9 20.75H5.5C4.25736 20.75 3.25 19.7426 3.25 18.5V15ZM5.5 14.25C5.08579 14.25 4.75 14.5858 4.75 15V18.5C4.75 18.9142 5.08579 19.25 5.5 19.25H9C9.41421 19.25 9.75 18.9142 9.75 18.5V15C9.75 14.5858 9.41421 14.25 9 14.25H5.5ZM12.75 15C12.75 13.7574 13.7574 12.75 15 12.75H18.5C19.7426 12.75 20.75 13.7574 20.75 15V18.5C20.75 19.7426 19.7426 20.75 18.5 20.75H15C13.7574 20.75 12.75 19.7426 12.75 18.5V15ZM15 14.25C14.5858 14.25 14.25 14.5858 14.25 15V18.5C14.25 18.9142 14.5858 19.25 15 19.25H18.5C18.9142 19.25 19.25 18.9142 19.25 18.5V15C19.25 14.5858 18.9142 14.25 18.5 14.25H15Z"
+        />
+      ),
+      href: "/ui-elements",
+      hasDropdown: true,
+    },
+    {
+      id: "Authentication",
+      label: "Authentication",
+      icon: (
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M8.25 7C8.25 5.20507 9.70507 3.75 11.5 3.75H12.5C14.2949 3.75 15.75 5.20507 15.75 7V8.25H17C18.2426 8.25 19.25 9.25736 19.25 10.5V18.5C19.25 19.7426 18.2426 20.75 17 20.75H7C5.75736 20.75 4.75 19.7426 4.75 18.5V10.5C4.75 9.25736 5.75736 8.25 7 8.25H8.25V7ZM9.75 8.25H14.25V7C14.25 6.0335 13.4665 5.25 12.5 5.25H11.5C10.5335 5.25 9.75 6.0335 9.75 7V8.25ZM7 9.75C6.58579 9.75 6.25 10.0858 6.25 10.5V18.5C6.25 18.9142 6.58579 19.25 7 19.25H17C17.4142 19.25 17.75 18.9142 17.75 18.5V10.5C17.75 10.0858 17.4142 9.75 17 9.75H7Z"
+        />
+      ),
+      href: "/authentication",
+      hasDropdown: true,
+      submenu: [
+        {
+          id: "SignIn",
+          label: "Sign In",
+          href: "/authentication/signin",
+        },
+      ],
+    },
+  ]
+
+  const isActive = (href) => pathname === href
 
   return (
     <aside
@@ -64,7 +168,7 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
           <Image
             width={176}
             height={32}
-            src="/images/logo/logo-white.png"
+            src="/images/logo/logo-white.jpg"
             alt="Logo"
             className="hidden dark:block"
             priority
@@ -72,17 +176,14 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
           <Image
             width={176}
             height={32}
-            src="/images/logo/logo-black.png"
+            src="/images/logo/logo-black.jpg"
             alt="Logo"
             className="dark:hidden"
             priority
           />
         </Link>
 
-        <button
-          onClick={() => setSidebarToggle(false)}
-          className="block lg:hidden"
-        >
+        <button onClick={() => setSidebarToggle(false)} className="block lg:hidden">
           <svg
             className="fill-current"
             width="24"
@@ -105,39 +206,154 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         <nav>
           <div>
-            <h3 className="mb-4 text-xs uppercase leading-5 text-gray-400">
-              MENU
-            </h3>
+            <h3 className="mb-4 text-xs uppercase leading-5 text-gray-400">MENU</h3>
 
-            <ul className="mb-6 flex flex-col gap-4">
+            <ul className="mb-6 flex flex-col gap-1.5">
               {menuItems.map((item) => (
                 <li key={item.id}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setSelectedMenu(item.id)}
-                    className={`menu-item group ${
-                      isActive(item.href)
-                        ? "menu-item-active"
-                        : "menu-item-inactive"
-                    }`}
-                  >
-                    <svg
-                      className={`${
-                        isActive(item.href)
-                          ? "menu-item-icon-active"
-                          : "menu-item-icon-inactive"
-                      }`}
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      {item.icon}
-                    </svg>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.id)}
+                        className={`menu-item group w-full ${
+                          isActive(item.href) ? "menu-item-active" : "menu-item-inactive"
+                        }`}
+                      >
+                        <svg
+                          className={`${isActive(item.href) ? "menu-item-icon-active" : "menu-item-icon-inactive"}`}
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {item.icon}
+                        </svg>
 
-                    <span className="menu-item-text">{item.label}</span>
-                  </Link>
+                        <span className="flex-1 text-left">{item.label}</span>
+
+                        <svg
+                          className={`menu-item-arrow ${
+                            openDropdowns[item.id] ? "menu-item-arrow-active" : "menu-item-arrow-inactive"
+                          }`}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.70711 7.29289L10 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68342 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setSelectedMenu(item.id)}
+                      className={`menu-item group ${isActive(item.href) ? "menu-item-active" : "menu-item-inactive"}`}
+                    >
+                      <svg
+                        className={`${isActive(item.href) ? "menu-item-icon-active" : "menu-item-icon-inactive"}`}
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        {item.icon}
+                      </svg>
+
+                      <span>{item.label}</span>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            {/* OTHERS section */}
+            <h3 className="mb-4 text-xs uppercase leading-5 text-gray-400">OTHERS</h3>
+
+            <ul className="mb-6 flex flex-col gap-1.5">
+              {othersMenuItems.map((item) => (
+                <li key={item.id}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.id)}
+                        className={`menu-item group w-full ${
+                          isActive(item.href) ? "menu-item-active" : "menu-item-inactive"
+                        }`}
+                      >
+                        <svg
+                          className={`${isActive(item.href) ? "menu-item-icon-active" : "menu-item-icon-inactive"}`}
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {item.icon}
+                        </svg>
+
+                        <span className="flex-1 text-left">{item.label}</span>
+
+                        <svg
+                          className={`menu-item-arrow ${
+                            openDropdowns[item.id] ? "menu-item-arrow-active" : "menu-item-arrow-inactive"
+                          }`}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.70711 7.29289L10 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68342 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z"
+                          />
+                        </svg>
+                      </button>
+
+                      {item.submenu && openDropdowns[item.id] && (
+                        <ul className="mt-1.5 flex flex-col gap-1.5 pl-11">
+                          {item.submenu.map((subItem) => (
+                            <li key={subItem.id}>
+                              <Link
+                                href={subItem.href}
+                                className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-white/5"
+                              >
+                                {subItem.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setSelectedMenu(item.id)}
+                      className={`menu-item group ${isActive(item.href) ? "menu-item-active" : "menu-item-inactive"}`}
+                    >
+                      <svg
+                        className={`${isActive(item.href) ? "menu-item-icon-active" : "menu-item-icon-inactive"}`}
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        {item.icon}
+                      </svg>
+
+                      <span>{item.label}</span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -145,5 +361,5 @@ export default function Sidebar({ sidebarToggle, setSidebarToggle }) {
         </nav>
       </div>
     </aside>
-  );
+  )
 }

@@ -7,5 +7,5 @@ export default function Preloader() {
     >
       <div className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary-500 border-t-transparent"></div>
     </div>
-  );
+  )
 }

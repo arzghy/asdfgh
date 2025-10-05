@@ -1,21 +1,27 @@
-import MetricGroupOne from "../../components/(dashboard)/MetricGroupOne";
-import ChartOne from "../../components/(dashboard)/ChartOne";
-import ChartTwo from "../../components/(dashboard)/ChartTwo";
-import ChartThree from "../../components/(dashboard)/ChartThree";
+import MetricGroupOne from "../../components/(dashboard)/MetricGroupOne"
+import ChartOne from "../../components/(dashboard)/ChartOne"
+import ChartTwo from "../../components/(dashboard)/ChartTwo"
+import ChartThree from "../../components/(dashboard)/ChartThree"
 
-export default function Dashboard() {
+const Dashboard = () => {
   return (
-    <div className="grid grid-cols-12 gap-4 md:gap-6">
-      <div className="col-span-12 space-y-6 xl:col-span-7">
-        <MetricGroupOne />
+    <>
+      <MetricGroupOne />
+
+      <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
         <ChartOne />
-      </div>
-      <div className="col-span-12 xl:col-span-5">
         <ChartTwo />
-      </div>
-      <div className="col-span-12">
         <ChartThree />
+        {/* You can add more components here if needed, for example ChartFour */}
+        {/* <ChartFour /> */}
+
+        {/* The Map and Tables are excluded as per your request */}
+        {/* <MapOne /> */}
+        {/* <TableOne /> */}
+        {/* <ChatCard /> */}
       </div>
-    </div>
-  );
+    </>
+  )
 }
+
+export default Dashboard

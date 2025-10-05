@@ -1,14 +1,76 @@
-"use client";
-import React from "react";
+"use client"
+import { useState } from "react"
+import ReactApexChart from "react-apexcharts"
+
+const options = {
+  legend: {
+    show: false,
+  },
+  colors: ["#465FFF"],
+  chart: {
+    fontFamily: "Outfit, sans-serif",
+    height: 335,
+    type: "bar",
+    toolbar: {
+      show: false,
+    },
+  },
+  plotOptions: {
+    bar: {
+      horizontal: false,
+      columnWidth: "40%",
+      borderRadius: 4,
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  stroke: {
+    show: true,
+    width: 2,
+    colors: ["transparent"],
+  },
+  xaxis: {
+    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    show: false,
+  },
+  grid: {
+    show: false,
+  },
+  fill: {
+    opacity: 1,
+  },
+  tooltip: {
+    y: {
+      formatter: (val) => val,
+    },
+  },
+}
 
 const ChartOne = () => {
-  return (
-    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white px-5 pb-5 pt-5 dark:border-gray-800 dark:bg-white/[0.03] sm:px-6 sm:pt-6">
-      <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
-          Monthly Sales
-        </h3>
+  const [state, setState] = useState({
+    series: [
+      {
+        name: "Sales",
+        data: [420, 480, 450, 520, 480, 550, 650, 600, 720, 780, 820, 850],
+      },
+    ],
+  })
 
+  return (
+    <div className="col-span-12 rounded-2xl border border-gray-200 bg-white px-5 pb-5 pt-6 shadow-xs dark:border-gray-800 dark:bg-white/[0.03] xl:col-span-7">
+      <div className="mb-6 flex items-start justify-between">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Monthly Sales</h3>
+        </div>
         <div className="relative">
           <button className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white">
             <svg
@@ -30,17 +92,13 @@ const ChartOne = () => {
         </div>
       </div>
 
-      <div className="max-w-full overflow-x-auto custom-scrollbar">
-        <div className="-ml-5 min-w-[650px] pl-2 xl:min-w-full">
-          <div className="flex h-[350px] items-center justify-center rounded-lg bg-gray-50 dark:bg-gray-900">
-            <p className="text-center text-gray-500 dark:text-gray-400">
-              Chart library (e.g., ApexCharts) needs to be configured here.
-            </p>
-          </div>
+      <div>
+        <div id="chartOne" className="-ml-5">
+          <ReactApexChart options={options} series={state.series} type="bar" height={335} />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ChartOne;
+export default ChartOne
